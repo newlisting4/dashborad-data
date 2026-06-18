@@ -1,26 +1,34 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  html,
-  body {
-    @apply p-0 m-0 box-border font-Montserrat bg-[#F0FFFA];
-  }
+@theme {
+  --font-montserrat: "Montserrat", "sans-serif";
+  --color-custom-gray: #EFEFF6;
+  --color-custom-gray2: #3D405C;
+  --color-custom-gray3: #71748D;
+  --color-custom-blue: #0E0C28;
+  --color-custom-blue2: #7A80B4;
+  --color-custom-blue3: #F9F9FF;
+  --color-custom-blue4: #484c75;
+  --color-custom-blue5: #242849;
+  --color-custom-indigo: #A4AADB;
+  --color-custom-indigo2: #7171a6;
+}
 
-  /* chrome */
-  .sidebar::-webkit-scrollbar {
-    width: 0px;
-  }
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  background-color: #F0FFFA;
+}
 
-  /* firefox */
-  @supports (scrollbar-color: grey transparent) {
-    /* * {
-      scrollbar-color: grey transparent;
-      scrollbar-width: thin;
-    } */
-    .sidebar {
-      scrollbar-width: none;
-    }
+.sidebar::-webkit-scrollbar {
+  width: 0px;
+}
+
+@supports (scrollbar-color: grey transparent) {
+  .sidebar {
+    scrollbar-width: none;
   }
 }

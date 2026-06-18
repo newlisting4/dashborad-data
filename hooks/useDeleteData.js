@@ -15,7 +15,7 @@ function useDeleteData({ path, revalidate }) {
   return useMutation({
     mutationFn: deleteFn,
     onSuccess: () => {
-      queryClient.invalidateQueries([revalidate]);
+      queryClient.invalidateQueries({ queryKey: [revalidate] });
       // toast.success("Deleted Succcessfully");
     },
     onError: (error) => {

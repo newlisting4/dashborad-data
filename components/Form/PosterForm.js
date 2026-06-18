@@ -6,7 +6,6 @@ import { CheckboxField, TextField } from "../common/InputField";
 import useGetData from "../../hooks/useGetData";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 
 function PosterForm({ id, adminId }) {

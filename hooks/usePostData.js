@@ -113,7 +113,7 @@ function usePostData({
   return useMutation({
     mutationFn: postFn,
     onSuccess: () => {
-      queryClient.invalidateQueries([revalidate]);
+      queryClient.invalidateQueries({ queryKey: [revalidate] });
       toast.success(successMessage);
     },
     onError: (error) => {

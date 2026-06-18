@@ -34,7 +34,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import {
-  Hydrate,
+  HydrationBoundary,
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
@@ -52,7 +52,7 @@ function MyApp({
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <Hydrate state={dehydratedState}>
+        <HydrationBoundary state={dehydratedState}>
           <SessionProvider session={session}>
             <NextNProgress options={{ showSpinner: false }} />
             <ToastContainer
@@ -65,7 +65,7 @@ function MyApp({
             <Analytics />
           </SessionProvider>
           <ReactQueryDevtools />
-        </Hydrate>
+          </HydrationBoundary>
       </QueryClientProvider>
     </>
   );
