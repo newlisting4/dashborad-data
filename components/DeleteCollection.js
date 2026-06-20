@@ -18,8 +18,11 @@ function DeleteCollection({ collectionInfo }) {
   // console.log("role", role);
 
   const router = useRouter();
-  const posterDetailsId =
-    role === "admin" ? router.query.posterDetailsId : session?.user?.id;
+  const isPureCollectionsPage = router.pathname === "/pure-collections";
+
+  const posterDetailsId = isPureCollectionsPage
+    ? "undefined"
+    : (role === "admin" ? router.query.posterDetailsId : session?.user?.id);
 
   console.log("posterid", posterDetailsId);
 
@@ -27,7 +30,7 @@ function DeleteCollection({ collectionInfo }) {
 
   const { mutate, isLoading, isSuccess, isError } = useDeleteData({
     path: `/delete/info/${collectionInfo._id}/${posterDetailsId}`,
-    revalidate: `/posters/details/${posterDetailsId}`,
+    revalidate: isPureCollectionsPage ? "/pure-collections" : `/posters/details/${posterDetailsId}`,
   });
 
   const handleDelete = () => {

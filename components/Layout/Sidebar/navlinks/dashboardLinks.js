@@ -25,6 +25,11 @@ export const dashboardLinks = [
     icon: <FaEnvelope />,
   },
   {
+    name: "Pure Collections",
+    link: "/pure-collections",
+    icon: <FaEnvelope />,
+  },
+  {
     name: "Cash App",
     link: "/cash-app",
     icon: <FaEnvelope />,

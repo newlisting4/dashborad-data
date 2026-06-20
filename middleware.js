@@ -77,6 +77,7 @@ export const config = {
     "/link",
     // "/clicks",
     "/collections",
+    "/pure-collections",
     "/cash-app",
     "/qr-code",
     "/posters/:path*",
