@@ -34,11 +34,11 @@ export const dashboardLinks = [
     link: "/cash-app",
     icon: <FaEnvelope />,
   },
-  {
-    name: "Posters",
-    link: "/posters",
-    icon: <FaUsers />,
-  },
+  // {
+  //   name: "Posters",
+  //   link: "/posters",
+  //   icon: <FaUsers />,
+  // },
   {
     name: "ID Card",
     link: "/id-card",
